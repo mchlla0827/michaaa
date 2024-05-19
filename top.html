@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <title></title>
+<style type="text/css">
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header {
+    height: 80px;
+    width: 70%;
+    background-color: #776B5D;
+    border-radius: 5px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    
+}
+
+.logo {
+    color: white; 
+    font-size: 24px; 
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart p {
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: #776B5D;
+    color: white;
+    margin-left: 10px;
+}
+
+.cart i {
+    font-size: 28px; 
+}
+
+.container {
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+#root {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.sidebar {
+    width: 40%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+.head {
+    background-color: #776B5D;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #776B5D;
+    padding: 15px;
+}
+
+.img-box {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.images {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottom {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+
+h2 {
+    font-size: 20px;
+    color: red;
+}
+
+button {
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #776B5D;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: #D1BB9E;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+
+.rox-img {
+    width: 50px;
+    height: 5px;
+    border-radius: 50px;
+    border: 1px solid #776B5D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg {
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50px;
+}
+
+.bxs-trash:hover {
+    cursor: pointer;
+    color: #333;
+}
+
+.btn {
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #776B5D;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #D1BB9E;
+}
+.wrapper h4 {
+            padding-bottom: 5px;
+            color: #252323;
+        }
+        .input_group {
+            margin-bottom: 8px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 5px 0;
+        }
+        .input_box {
+            width: 100%;
+            margin-right: 12px;
+            position: relative;
+        }
+        .input_box:last-child {
+            margin-right: 0;
+        }
+        .input_box .name {
+            padding: 14px 10px 14px 50px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid black;
+            outline: none;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 3px;
+            color: #333;
+        }
+        .input_box .name:focus {
+            -webkit-box-shadow: 0 0 2px 1px #776B5D;
+            -moz-box-shadow: 0 0 2px 1px #776B5D;
+            box-shadow: 0 0 2px 1px #776B5D;
+            border: 1px solid #776B5D;
+        }
+        .input_box .icon {
+            width: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            top: 0px;
+            color: #333;
+            background-color: white;
+            border-radius: 2px 0 0 2px;
+            transition: 0.3s;
+            font-size: 20px;
+            pointer-events: none;
+            border: 1px solid black;
+            border-right: none;
+        }
+        .name:focus+.icon {
+            background-color: #776B5D;
+            color: white;
+            border: 1px solid #776B5D;
+            border: none;
+            transition: 1s;
+        }
+        .dob {
+            width: 30%;
+            padding: 14px;
+            text-align: center;
+            background-color: white;
+            transition: 0.3s;
+            outline: none;
+            border: 1px solid lightslategray;
+            border-right: 3px;
+        }
+        .radio {
+            display: none;
+        }
+        .input_box label:first-of-type {
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-right: none;
+        }
+        .input_box label:last-of-type {
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        .radio:checked+label {
+            background-color: #776B5D;
+            color: white;
+            transition: 0.5s;
+        }
+        .input_box label {
+            width: 50%;
+            padding: 13px;
+            background-color: white;
+            display: inline-block;
+            text-align: center;
+            border: 1px solid lightslategray;
+        }
+        .input_box button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #776B5D;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .input_box button i {
+            margin-right: 8px;
+        }
+        .input_box button:hover {
+            cursor: pointer;
+            background-color: #D1BB9E;
+        }
+
+
+</style>
+    </head>
+    <body>
+        <div class="header">
+            <p class="logo">ChicStyle </p>
+            <div class="cart"><i class='bx bx-cart' ></i>
+            <p id="count">0</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="root"></div>
+              <div class="sidebar">
+                 <div class="head"><p> MY CART </p></div>
+                 <div id="cartItem"> Your Cart is empty</div>
+                 <div class="foot">
+                 <h3> Total </h3> <h2 id="total"> ₱ 0.00 </h2></div>
+
+                 <div class="head"><p>BILLING ADDRESS</p></div>
+                     <div class="wrapper">
+                         <form id="billingForm" action="" method="POST">
+                                 <h4>Account</h4>
+                                     <div class="input_group">
+                                     <div class="input_box">
+                                     <input type="text" name="name" placeholder="Name" required class="name">
+                                     <i class='bx bx-user'></i>
+                                     </div>
+                             <div class="input_box">
+                                     <input type="email" name="email" placeholder="Email Address" required class="name">
+                                     <i class='bx bx-envelope' ></i>
+                             </div>
+                     </div>
+                 <div class="input_group">
+                 <div class="input_box">
+                                 <input type="text" name="address" placeholder="Address" required class="name">
+                                 <i class='bx bx-map' ></i>
+                 </div>
+                 <div class="input_box">
+                                 <input type="tel" name="contact" placeholder="Contact No." required class="name">
+                                 <i class='bx bx-phone' ></i>
+                 </div>
+             </div>
+          <div class="input_group">
+              <input type="radio" name="payment" class="radio" id="gcash" checked>
+              <label for="gcash"><span><i class='bx bx-wallet' ></i> GCash</span></label>
+              <input type="radio" name="payment" class="radio" id="cash">
+              <label for="cash"><span><i class='bx bx-money'></i></i> Cash</span></label>
+          </div>
+          <div class="input_group">
+              <button onclick="checkout()">Checkout</button>
+          </div>
+         </form>
+
+         <div class="back">
+            <a href="home.html" class="btn"> HOMEPAGE </a>
+         </div>
+         </div>
+        </div>
+    
+
+    <script>
+           const product = [
+            {
+                id: 0,
+                image: 'top1.jpg',
+                title: 'Basic Blue Top',
+                price: 60,
+            },
+
+            {
+                id: 1,
+                image: 'top2.jpg',
+                title: 'Casual waffle Knit self-tie top',
+                price: 300,
+            },
+
+            {
+                id: 2,
+                image: 'top3.jpg',
+                title: 'Brown self-tie',
+                price: 200,
+            },
+
+            {
+                id: 3,
+                image: 'top4.jpg',
+                title: 'White Knit Top',
+                price: 60,
+            },
+
+            {
+                id: 4,
+                image: 'top5.jpg',
+                title: 'Basic plain white shirt',
+                price: 100,
+            },
+
+            {
+                id: 5,
+                image: 'top6.jpg',
+                title: 'Brown vest cardigan',
+                price: 150,
+            },
+
+            {
+                id: 6,
+                image: 'top7.jpg',
+                title: 'Blue top with lace',
+                price: 250,
+            },
+
+            {
+                id: 7,
+                image: 'top8.png',
+                title: 'Women black knit top',
+                price: 280,
+            },
+
+            {
+                id: 8,
+                image: 'top9.png',
+                title: 'Square neck t-shirt',
+                price: 150,
+            },
+
+            {
+                id: 8,
+                image: 'top10.png',
+                title: 'Tube style top',
+                price: 150,
+            },
+        ];
+
+        function formatCurrency(amount) {
+            return '₱' + amount.toFixed(2);
+        }
+                document.addEventListener('DOMContentLoaded', function () {
+                    const root = document.getElementById('root');
+            
+                    product.forEach(item => {
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('box');
+            
+                        productDiv.innerHTML = `
+                            <div class="img-box">
+                                <img class="images" src="${item.image}" alt="${item.title}">
+                            </div>
+                            <div class="bottom">
+                                <p>${item.title}</p>
+                                <h2>₱${item.price}.00</h2>
+                                <button onclick="addToCart(${item.id})">Add to cart</button>
+                            </div>
+                        `;
+            
+                        root.appendChild(productDiv);
+                    });
+                });
+            
+                var cart = [];
+                var total = 0; // Initialize total outside the function
+            
+                function addToCart(productId) {
+                    cart.push({...product[productId]});
+                    total += product[productId].price; // Update total
+                    displaycart();
+                }
+            
+                function delElement(a) {
+                    total -= cart[a].price; // Update total
+                    cart.splice(a, 1);
+                    displaycart();
+                }
+            
+                function displaycart() {
+                    let j = 0;
+                    document.getElementById("count").innerHTML = cart.length;
+            
+                    if (cart.length == 0) {
+                        document.getElementById('cartItem').innerHTML = "Your cart is empty";
+                        document.getElementById("total").innerHTML = "₱0.00";
+                    } else {
+                        document.getElementById("cartItem").innerHTML = cart.map((items) => {
+                            var {image, title, price} = items;
+                            return (
+                                `<div class='cart-item'>
+                                    <div class='row-img'>
+                                        <img class='rowimg' src=${image}>
+                                    </div>
+                                    <p style='font-size:12px;'>${title}</p>
+                                    <h2 style='font-size: 15px;'>₱${price}.00</h2>
+                                    <i class='bx bxs-trash' onclick='delElement(${j++})'></i>
+                                </div>`
+                            );
+                        }).join('');
+            
+                        document.getElementById("total").innerHTML = "₱" + total + ".00"; 
+                    }
+                }
+
+                function checkout() {
+                    console.log('Checkout function called');
+                    const billingForm = document.getElementById('billingForm');
+                    const name = billingForm.querySelector('input[name="name"]').value;
+                    const email = billingForm.querySelector('input[name="email"]').value;
+                    const address = billingForm.querySelector('input[name="address"]').value;
+                    const contact = billingForm.querySelector('input[name="contact"]').value;
+                    const paymentMethod = billingForm.querySelector('input[name="payment"]:checked').nextElementSibling.textContent.trim();
+
+                    const billingDetails = `
+                        Name: ${name}
+                        Email: ${email}
+                        Address: ${address}
+                        Contact No.: ${contact}
+                        Payment Method: ${paymentMethod}
+                        Total: ${formatCurrency(total)}
+                    `;
+
+                    alert('Your order has been confirmed!\n\nBilling Details:\n' + billingDetails);
+                }
+    </script>
+    </body>
+</html>
